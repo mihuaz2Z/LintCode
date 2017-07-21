@@ -34,10 +34,7 @@ public:
 
 class Solution {
 public:
-    /**
-     * @param node: a node in the list should be deleted
-     * @return: nothing
-     */
+
     void deleteNode(ListNode *node) {
         ListNode * deleteNode = node->next;
         node->val = node->next->val;
