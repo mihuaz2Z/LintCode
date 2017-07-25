@@ -73,7 +73,7 @@ public:
         for (int i = 0; i < intervals.size(); i ++) {
             cout << intervals[i].start << "-"<<intervals[i].end<<endl;
         }
-        
+        cout << "zzzz" <<endl;
         //合并区间：
         for (int i = 0; i < intervals.size()-1; i ++) {
             if (intervals[i].end >= intervals[i+1].start) {
