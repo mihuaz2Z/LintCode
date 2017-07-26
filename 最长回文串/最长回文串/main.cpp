@@ -37,19 +37,10 @@ public:
     int longestPalindrome(string& s) {
         map<char,int> hashmap;
         vector<char> vec;
-        vec.push_back(s[0]);
         for (int i = 0; i < s.size(); i ++) {
             hashmap[s[i]] = hashmap[s[i]] + 1;
-            for (int j = 0; j < vec.size(); j ++) {
-                if (vec[j] == s[i]) {
-                        break;
-                }
-                else
-                {
-                    if (j == vec.size()-1) {
-                        vec.push_back(s[i]);
-                    }
-                }
+            if (hashmap[s[i]] == 1) {
+                vec.push_back(s[i]);
             }
         }
         
@@ -61,7 +52,7 @@ public:
             }
             else{
                 has_a = 1;
-                sum += hashmap[vec[i]] -1;
+                sum += hashmap[vec[i]] -1;//奇数串-1也是偶数串。
             }
         }
 
