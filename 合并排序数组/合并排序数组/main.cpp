@@ -65,7 +65,7 @@ public:
     
         int location = (int)big->size()-1;
         for (int i = (int)big->size()-1; i >= 0; i --) {
-            if ((*big)[i] <= (*small)[0]) {
+            if ((*big)[i] >= (*small)[0]) {
                 location = i;
             }
         }
@@ -74,7 +74,7 @@ public:
             big->push_back((*small)[i]);
         }
         
-        quick(big, location, (int)big->size()-1-location);
+        quick(big, location, (int)big->size()-1);
         
         return *big;
     }
@@ -83,8 +83,8 @@ public:
 
 int main(int argc, const char * argv[]) {
     Solution s;
-    vector<int> temp1 = {1};
-    vector<int> temp2 = {1};
+    vector<int> temp1 = {1,5};
+    vector<int> temp2 = {2,3};
     vector<int>  big = s.mergeSortedArray(temp1, temp2);
     for (int i =0; i < big.size(); i ++) {
         cout << big[i] << " ";
